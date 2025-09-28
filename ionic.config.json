@@ -1,0 +1,7 @@
+{
+  "name": "FlutterFlow",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
