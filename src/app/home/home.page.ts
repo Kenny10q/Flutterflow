@@ -13,16 +13,18 @@ export class HomePage {
 
   ngOnInit() {
     this.platform.ready().then(() => {
+      const url = 'https://bubble.io/';
+      
       if (this.platform.is('cordova') || this.platform.is('capacitor')) {
-        // Carga web en InAppBrowser en móvil
+        // Cargar Bubble en InAppBrowser
         this.iab.create(
-          'https://www.flutterflow.io/',
-          '_self',  // abre en la misma ventana
+          url,
+          '_self', // abre dentro de la app
           'location=no,zoom=no,hardwareback=yes'
         );
       } else {
-        // Fallback en navegador
-        window.location.href = 'https://www.flutterflow.io/';
+        // Fallback para navegador
+        window.location.href = url;
       }
     });
   }
